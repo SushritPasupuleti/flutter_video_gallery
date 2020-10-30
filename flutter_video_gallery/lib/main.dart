@@ -33,25 +33,33 @@ class _ChewieDemoState extends State<ChewieDemo> {
     _videoPlayerController1 =
         VideoPlayerController.asset('assets/zawarudo.mp4');
     _chewieController = ChewieController(
-      videoPlayerController: _videoPlayerController1,
-      aspectRatio: 9 / 16,
-      autoPlay: false,
-      looping: true,
-      // Try playing around with some of these other options:
+        videoPlayerController: _videoPlayerController1,
+        aspectRatio: 9 / 16,
+        autoPlay: false,
+        looping: true,
+        // Try playing around with some of these other options:
 
-       showControls: true,
-      // materialProgressColors: ChewieProgressColors(
-      //   playedColor: Colors.red,
-      //   handleColor: Colors.blue,
-      //   backgroundColor: Colors.grey,
-      //   bufferedColor: Colors.lightGreen,
-      // ),
-      // placeholder: Container(
-      //   color: Colors.grey,
-      // ),
-      autoInitialize: true,
-      overlay: Text("Exercise Name")
-    );
+        showControls: false,
+        // materialProgressColors: ChewieProgressColors(
+        //   playedColor: Colors.red,
+        //   handleColor: Colors.blue,
+        //   backgroundColor: Colors.grey,
+        //   bufferedColor: Colors.lightGreen,
+        // ),
+        // placeholder: Container(
+        //   color: Colors.grey,
+        // ),
+        autoInitialize: true,
+        overlay: RaisedButton(
+          child: Text("Za warudo"),
+          onPressed: () {
+            if (_videoPlayerController1.value.isPlaying) {
+              _chewieController.pause();
+            } else {
+              _chewieController.play();
+            }
+          },
+        ));
   }
 
   @override
