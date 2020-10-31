@@ -54,7 +54,9 @@ class _ChewieDemoState extends State<ChewieDemo> {
         aspectRatio: 9 / 16,
         autoPlay: false,
         looping: true,
-        customControls: VideoCustomControls(videoPlayerController1: _videoPlayerController1,),
+        customControls: VideoCustomControls(
+          videoPlayerController1: _videoPlayerController1,
+        ),
         // Try playing around with some of these other options:
 
         //showControls: false,
@@ -136,9 +138,7 @@ class _ChewieDemoState extends State<ChewieDemo> {
         platform: _platform ?? Theme.of(context).platform,
       ),
       home: Scaffold(
-          appBar: AppBar(
-            title: Text(widget.title),
-          ),
+          backgroundColor: Colors.black,
           body: new Padding(
               padding: EdgeInsets.fromLTRB(0, 25, 0, 25),
               child: Swiper(
@@ -163,7 +163,8 @@ class _ChewieDemoState extends State<ChewieDemo> {
 
 class VideoCustomControls extends StatefulWidget {
   VideoPlayerController videoPlayerController1;
-  VideoCustomControls({Key key, @required this.videoPlayerController1}) : super(key: key);
+  VideoCustomControls({Key key, @required this.videoPlayerController1})
+      : super(key: key);
 
   @override
   _VideoCustomControlsState createState() => _VideoCustomControlsState();
@@ -175,12 +176,12 @@ class _VideoCustomControlsState extends State<VideoCustomControls> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-          backgroundColor: Colors.transparent,
-          // bottomNavigationBar: BottomAppBar(
-          //   color: Colors.white,
-          //   child: Text("Contents"),
-          // ),
-          floatingActionButton: FloatingActionButton(
+      backgroundColor: Colors.transparent,
+      // bottomNavigationBar: BottomAppBar(
+      //   color: Colors.white,
+      //   child: Text("Contents"),
+      // ),
+      floatingActionButton: FloatingActionButton(
         onPressed: () {
           // Wrap the play or pause in a call to `setState`. This ensures the
           // correct icon is shown.
@@ -201,8 +202,7 @@ class _VideoCustomControlsState extends State<VideoCustomControls> {
           _playing ? Icons.pause : Icons.play_arrow,
         ),
       ),
-          floatingActionButtonLocation:
-              FloatingActionButtonLocation.centerFloat,
-        );
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+    );
   }
 }
