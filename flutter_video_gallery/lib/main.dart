@@ -28,7 +28,6 @@ class _ChewieDemoState extends State<ChewieDemo> {
   TargetPlatform _platform;
   VideoPlayerController _videoPlayerController1;
   ChewieController _chewieController;
-List list = ['Introduction','Early life', 'Non-Film work', '2012-present', 'Controversy'];
 
   @override
   void initState() {
