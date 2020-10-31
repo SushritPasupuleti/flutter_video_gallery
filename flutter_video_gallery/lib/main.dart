@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:chewie/chewie.dart';
 import 'package:chewie/src/chewie_player.dart';
 import 'package:flutter/cupertino.dart';
@@ -26,6 +28,7 @@ class _ChewieDemoState extends State<ChewieDemo> {
   TargetPlatform _platform;
   VideoPlayerController _videoPlayerController1;
   ChewieController _chewieController;
+List list = ['Introduction','Early life', 'Non-Film work', '2012-present', 'Controversy'];
 
   @override
   void initState() {
@@ -39,7 +42,7 @@ class _ChewieDemoState extends State<ChewieDemo> {
         looping: true,
         // Try playing around with some of these other options:
 
-        showControls: false,
+        //showControls: false,
         // materialProgressColors: ChewieProgressColors(
         //   playedColor: Colors.red,
         //   handleColor: Colors.blue,
@@ -50,16 +53,50 @@ class _ChewieDemoState extends State<ChewieDemo> {
         //   color: Colors.grey,
         // ),
         autoInitialize: true,
-        overlay: RaisedButton(
-          child: Text("Za warudo"),
-          onPressed: () {
-            if (_videoPlayerController1.value.isPlaying) {
-              _chewieController.pause();
-            } else {
-              _chewieController.play();
-            }
-          },
-        ));
+        overlay: 
+          Container(
+  child: new Stack(
+    fit: StackFit.expand,
+    children: <Widget>[
+    new Scaffold(
+      appBar: new AppBar(
+        title: new Text("Video Title"),
+        elevation: 0.0,
+        backgroundColor: const Color(0x00000000).withOpacity(0.5),
+      ),
+      backgroundColor: Colors.transparent,
+      body: new Center(
+        child: new Center(
+          // child: new BackdropFilter(
+          //       filter: new ImageFilter.blur(
+          //         sigmaX: 6.0,
+          //         sigmaY: 6.0,
+          //       ),
+          //       child: new Container(
+          //         margin: EdgeInsets.all(20.0),
+          //         padding: EdgeInsets.all(20.0),
+          //         decoration: BoxDecoration(
+          //           color: const Color(0xFFB4C56C).withOpacity(0.01),
+          //           borderRadius: BorderRadius.all(Radius.circular(50.0)),
+          //         ),
+          //         child: Text("hi")
+          //       ),
+          //     ),
+          //   
+      ),
+    )
+          )],),)
+          // RaisedButton(child:
+        //   Text("Za warudo"),
+        //   onPressed: () {
+        //     if (_videoPlayerController1.value.isPlaying) {
+        //       _chewieController.pause();
+        //     } else {
+        //       _chewieController.play();
+        //     }
+        //   },
+        // )
+        );
   }
 
   @override
