@@ -6,6 +6,7 @@ import 'package:chewie/src/chewie_player.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:flutter_video_gallery/radial_fab.dart';
 import 'package:video_player/video_player.dart';
 
 void main() {
@@ -181,7 +182,9 @@ class _VideoCustomControlsState extends State<VideoCustomControls> {
       //   color: Colors.white,
       //   child: Text("Contents"),
       // ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: 
+      // RadialMenu(),
+      FloatingActionButton(
         onPressed: () {
           // Wrap the play or pause in a call to `setState`. This ensures the
           // correct icon is shown.
